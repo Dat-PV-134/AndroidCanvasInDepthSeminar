@@ -3,6 +3,7 @@ package com.xgame.androidcanvasindepthseminar
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.xgame.androidcanvasindepthseminar.auto_infinity_scroll.AutoInfinityScrollAnimActivity
 import com.xgame.androidcanvasindepthseminar.databinding.ActivityMainBinding
 import com.xgame.androidcanvasindepthseminar.qr_scan.QRScanActivity
 
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnAutoScrollInfinity.setOnClickListener {
-
+            startActivity(Intent(this@MainActivity, AutoInfinityScrollAnimActivity::class.java))
         }
 
         binding.btnChooserGame.setOnClickListener {
