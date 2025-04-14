@@ -19,10 +19,6 @@ class QRScanView : View {
         }
     }
 
-    private val scanPaint by lazy {
-        Paint(Paint.ANTI_ALIAS_FLAG)
-    }
-
     private var scanLineY = 0f
     private var animator: ValueAnimator? = null
 
@@ -70,7 +66,7 @@ class QRScanView : View {
 
     private fun drawScanAnim(canvas: Canvas) {
         val scanHeight = width * 0.3f
-        scanPaint.shader = LinearGradient(
+        myPaint.shader = LinearGradient(
             0f,
             scanLineY - scanHeight,
             0f,
@@ -91,7 +87,7 @@ class QRScanView : View {
                 width.toFloat(),
                 scanLineY
             ),
-            scanPaint
+            myPaint
         )
     }
 
