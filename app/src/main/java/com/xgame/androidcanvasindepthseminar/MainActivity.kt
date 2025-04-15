@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.xgame.androidcanvasindepthseminar.auto_infinity_scroll.AutoInfinityScrollAnimActivity
+import com.xgame.androidcanvasindepthseminar.chooser_game.ChooserGameActivity
 import com.xgame.androidcanvasindepthseminar.databinding.ActivityMainBinding
 import com.xgame.androidcanvasindepthseminar.qr_scan.QRScanActivity
 
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnChooserGame.setOnClickListener {
-
+            startActivity(Intent(this@MainActivity, ChooserGameActivity::class.java))
         }
     }
 }
