@@ -53,8 +53,10 @@ class ChooserGameView : View {
     )
 
     init {
-        setupCircles()
-        startAnimation()
+        post {
+            setupCircles()
+            startAnimation()
+        }
     }
 
     private fun setupCircles() {
@@ -88,6 +90,11 @@ class ChooserGameView : View {
         }
     }
 
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
+        setupCircles()
+    }
+
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
@@ -116,8 +123,8 @@ class ChooserGameView : View {
             point.let {
                 // Vẽ vòng tròn với scale hiện tại
                 canvas.drawCircle(
-                    x,
-                    y,
+                    it.x,
+                    it.y,
                     circle.radius * circle.currentScale,
                     paint
                 )
